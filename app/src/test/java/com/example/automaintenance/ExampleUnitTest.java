@@ -24,8 +24,6 @@ public class ExampleUnitTest {
         vehicle.addToVehicleList();
         int actual = vehicle.vehicleList.size();
                 assertEquals(expected, actual);
-
-
     }
 
 }

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
+import static junit.framework.Assert.assertEquals;
+
 public class MainActivity extends AppCompatActivity {
     List<Vehicle> vehicleList = new ArrayList<>();
 
@@ -19,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
             String message = "it works";
             TextView text = findViewById(R.id.textView);
             text.setText(message);
-
-
     }
     public void addToVehicleList(){
         vehicleList.add(new Vehicle());
