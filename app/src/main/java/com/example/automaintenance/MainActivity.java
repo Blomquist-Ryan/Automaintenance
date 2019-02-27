@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
-    Vehicle vehicleList = new <ArrayList> Vehicle();
+    List<Vehicle> vehicleList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
             text.setText(message);
 
 
+    }
+    public void addToVehicleList(){
+        vehicleList.add(new Vehicle());
     }
 
 }

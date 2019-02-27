@@ -20,9 +20,9 @@ public class ExampleUnitTest {
     @Test
     public  void addedToVehicleList(){
         MainActivity vehicle = new MainActivity();
-        int expected = 1;
+        int expected = vehicle.vehicleList.size() + 1;
         vehicle.addToVehicleList();
-        int actual = vehicle.vehicleList.lenght();
+        int actual = vehicle.vehicleList.size();
                 assertEquals(expected, actual);
 
 
