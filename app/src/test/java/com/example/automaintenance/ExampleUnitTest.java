@@ -2,6 +2,8 @@ package com.example.automaintenance;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 /**
@@ -14,4 +16,16 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public  void addedToVehicleList(){
+        MainActivity vehicle = new MainActivity();
+        int expected = 1;
+        vehicle.addToVehicleList();
+        int actual = vehicle.vehicleList.lenght();
+                assertEquals(expected, actual);
+
+
+    }
+
 }
