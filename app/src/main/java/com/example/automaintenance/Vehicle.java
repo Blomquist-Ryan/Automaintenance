@@ -1,19 +1,29 @@
 package com.example.automaintenance;
 
 public class Vehicle {
-    public double getVehicleMiles() {
+    private int  vehicleMiles;
+
+
+    public int getVehicleMiles() {
         return vehicleMiles;
     }
 
-    public void setVehicleMiles(double vehicleMiles) {
+    public void setVehicleMiles(int vehicleMiles) {
         this.vehicleMiles = vehicleMiles;
     }
 
-    private double vehicleMiles;
+
 
     public Vehicle(){
         setVehicleMiles(20000);
     }
 
+    public void setNextOilChangeMiles(){
+        vehicleMiles += 3000;
+    }
+
+    public void setNextTireRotationMiles(){
+        vehicleMiles += 5000;
+    }
 
 }
