@@ -14,7 +14,7 @@ public class Vehicle {
 
 
 
-    public Vehicle(){
+    public Vehicle() {
         setVehicleMiles(20000);
     }
 
@@ -25,5 +25,6 @@ public class Vehicle {
     public void setNextTireRotationMiles(){
         vehicleMiles += 5000;
     }
+
 
 }
