@@ -3,7 +3,6 @@ package com.example.automaintenance;
 public class Vehicle {
     private int  vehicleMiles;
 
-
     public int getVehicleMiles() {
         return vehicleMiles;
     }
@@ -11,8 +10,6 @@ public class Vehicle {
     public void setVehicleMiles(int vehicleMiles) {
         this.vehicleMiles = vehicleMiles;
     }
-
-
 
     public Vehicle() {
         setVehicleMiles(20000);
