@@ -1,7 +1,14 @@
 package com.example.automaintenance;
 
 public class Vehicle {
+
+    // Vehicle Variables:
     private int  vehicleMiles;
+    private String make;
+    private String model;
+    private int year;
+    private String licensePlate;
+    private String vin;
 
     public int getVehicleMiles() {
         return vehicleMiles;

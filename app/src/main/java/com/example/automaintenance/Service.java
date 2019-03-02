@@ -5,4 +5,10 @@ package com.example.automaintenance;
 // mileage.
 
 public class Service {
+    // Class Methods
+    public int calculateNextService() {
+        int nextDateOfService = 0;
+        return nextDateOfService;
+    }
+
 }
