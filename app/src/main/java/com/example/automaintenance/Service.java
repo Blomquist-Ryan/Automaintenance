@@ -5,10 +5,21 @@ package com.example.automaintenance;
 // mileage.
 
 public class Service {
+    private int dateOfNextService;
+
     // Class Methods
-    public int calculateNextService() {
-        int nextDateOfService = 0;
-        return nextDateOfService;
+    public int getDateOfNextService() {
+        return dateOfNextService;
     }
 
+    public void setDateOfNextService(int dateOfNextService) {
+        this.dateOfNextService = dateOfNextService;
+    }
+
+    public Service() {
+        dateOfNextService = 0;
+    }
+    public int calculateNextService(int currentMiles) {
+        return 0;
+    }
 }
