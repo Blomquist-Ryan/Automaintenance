@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Automaintenance</string>
+    <string name="title_activity_add_vehicle">AddVehicle</string>
+    <string name="title_activity_optoins">Optoins</string>
 </resources>
