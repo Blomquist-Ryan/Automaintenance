@@ -1,8 +1,14 @@
 package com.example.automaintenance;
 
 public class Vehicle {
-    private int  vehicleMiles;
 
+    // Vehicle Variables:
+    private int  vehicleMiles;
+    private String make;
+    private String model;
+    private int year;
+    private String licensePlate;
+    private String vin;
 
     public int getVehicleMiles() {
         return vehicleMiles;
@@ -12,9 +18,7 @@ public class Vehicle {
         this.vehicleMiles = vehicleMiles;
     }
 
-
-
-    public Vehicle(){
+    public Vehicle() {
         setVehicleMiles(20000);
     }
 
@@ -25,5 +29,6 @@ public class Vehicle {
     public void setNextTireRotationMiles(){
         vehicleMiles += 5000;
     }
+
 
 }
