@@ -2,4 +2,12 @@
     <string name="app_name">Automaintenance</string>
     <string name="title_activity_add_vehicle">AddVehicle</string>
     <string name="title_activity_optoins">Optoins</string>
+
+
+    <string name="newMake">New Make</string>
+    <string name="newModel">New Model</string>
+    <string name="newYear">New Year</string>
+    <string name="newMiles">New Miles</string>
+    <string name="newLicense">New License</string>
+    <string name="newVin">New Vin</string>
 </resources>
