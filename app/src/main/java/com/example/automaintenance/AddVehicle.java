@@ -7,6 +7,8 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
+
 import com.google.gson.Gson;
 
 public class AddVehicle extends AppCompatActivity {
@@ -30,12 +32,34 @@ public class AddVehicle extends AppCompatActivity {
         Vehicle newVehicle = new Vehicle();
         String vehicle = "";
 
-        newVehicle.setMake("Ford");
-        newVehicle.setModel("Focus");
-        newVehicle.setYear(2015);
-        newVehicle.setVehicleMiles(100000);
-        newVehicle.setLicensePlate("Wd4956");
-        newVehicle.setVin("yn4865nfiei3nf");
+        EditText make = findViewById(R.id.newMake);
+        String newMake = make.toString();
+
+        EditText model = findViewById(R.id.newModel);
+        String newModel = model.toString();
+
+        EditText year = findViewById(R.id.newYear);
+        String newYear = year.toString();
+
+        EditText miles = findViewById(R.id.newMiles);
+        String newMiles = miles.toString();
+
+        EditText license = findViewById(R.id.newLicense);
+        String newLicense = license.toString();
+
+        EditText vin = findViewById(R.id.newVin);
+        String newVin = vin.toString();
+
+
+
+
+
+        newVehicle.setMake(newMake);
+        newVehicle.setModel(newModel);
+        newVehicle.setYear(newYear);
+        newVehicle.setVehicleMiles(newMiles);
+        newVehicle.setLicensePlate(newLicense);
+        newVehicle.setVin(newVin);
 
         Gson gson = new Gson();
         vehicle = gson.toJson(vehicle);
