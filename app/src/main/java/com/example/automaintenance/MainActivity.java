@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toOptionsPage(View view) {
-        Intent intent = new Intent(this, AddVehicle.class);
+        Intent intent = new Intent(this, Options.class);
         startActivity(intent);
     }
 

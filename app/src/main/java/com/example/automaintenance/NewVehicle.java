@@ -19,7 +19,7 @@ public class NewVehicle extends AppCompatActivity {
     }
 
     public void returnToHomePage(View view){
-        Intent intent = new Intent(this, AddVehicle.class);
+        Intent intent = new Intent(this, NewVehicle.class);
         startActivity(intent);
     }
 
@@ -44,10 +44,6 @@ public class NewVehicle extends AppCompatActivity {
 
         EditText vin = findViewById(R.id.newVin);
         String newVin = vin.toString();
-
-
-
-
 
         newVehicle.setMake(newMake);
         newVehicle.setModel(newModel);
