@@ -36,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddVehicle.class);
         startActivity(intent);
 
-        AddVehicle vehicle = new AddVehicle();
-        Vehicle newVehicle  = vehicle.newVehicle();
-
-        vehicleList.add(newVehicle);
+        Gson gson = new Gson();
+        SharedPreferences mSettings = this.getSharedPreferences("name_preferences.xml", 0);
+        String sharedprefs = mSettings.getString("missing","newVehicle");
+        vehicleList = gson.fromJson(sharedprefs, new TypeToken<List<Vehicle>>(){}.getType());
     }
 
-    public void toOptionsPage(View view){
+    public void toOptionsPage(View view) {
         Intent intent = new Intent(this, AddVehicle.class);
         startActivity(intent);
     }
@@ -62,6 +62,4 @@ public class MainActivity extends AppCompatActivity {
         String sharedprefs = mSettings.getString("missing","savedVehicle");
         vehicleList = gson.fromJson(sharedprefs, new TypeToken<List<Vehicle>>(){}.getType());
     }
-
-
 }

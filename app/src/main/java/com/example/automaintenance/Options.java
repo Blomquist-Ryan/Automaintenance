@@ -32,10 +32,4 @@ public class Options extends AppCompatActivity {
         startActivity(intent);
 
     }
-
-//    public void toParts(View view){
-//        Intent intent = new Intent(this, AddVehicle.class);
-//        startActivity(intent);
-//
-//    }
 }
