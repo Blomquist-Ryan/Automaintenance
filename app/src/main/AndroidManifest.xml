@@ -9,41 +9,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DIY"
+        <activity android:name=".NewVehicle"></activity>
+        <activity
+            android:name=".DIY"
             android:parentActivityName=".Options">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Options"/>
+                android:value=".Options" />
         </activity>
-
-        <activity android:name=".ServiceHistory"
+        <activity
+            android:name=".ServiceHistory"
             android:parentActivityName=".Options">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Options"/>
+                android:value=".Options" />
         </activity>
-
-        <activity android:name=".Service"
+        <activity
+            android:name=".Service"
             android:parentActivityName=".Options">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Options"/>
+                android:value=".Options" />
         </activity>
-
-        <activity android:name=".Options"
+        <activity
+            android:name=".Options"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-
-        <activity android:name=".AddVehicle"
+        <activity
+            android:name=".AddVehicle"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
