@@ -1,6 +1,5 @@
 package com.example.automaintenance;
 
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +29,7 @@ public class Service extends AppCompatActivity {
     public Service() {
         dateOfNextService = 0;
     }
+
     public int calculateNextService(int currentMiles) {
         return 0;
 

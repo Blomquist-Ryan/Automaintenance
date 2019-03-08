@@ -16,32 +16,32 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
-
-    @Test
-    public  void addedToVehicleListPorperly(){
-        MainActivity vehicle = new MainActivity();
-        int expected = vehicle.vehicleList.size() + 1;
-        vehicle.addToVehicleList();
-        int actual = vehicle.vehicleList.size();
-                assertEquals(expected, actual);
-    }
-
-    @Test
-    public void setNextOilChangeMiles(){
-        Vehicle vehicle = new Vehicle();
-        int expected = 23000;
-        vehicle.setNextOilChangeMiles();
-        int actual = vehicle.getVehicleMiles();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void setNextTireRotationMiles(){
-        Vehicle vehicle = new Vehicle();
-        int expected = 25000;
-        vehicle.setNextTireRotationMiles();
-        int actual = vehicle.getVehicleMiles();
-        assertEquals(expected, actual);
-    }
+//
+//    @Test
+//    public  void addedToVehicleListPorperly(){
+//        MainActivity vehicle = new MainActivity();
+//        int expected = vehicle.vehicleList.size() + 1;
+//        vehicle.addToVehicleList();
+//        int actual = vehicle.vehicleList.size();
+//                assertEquals(expected, actual);
+//    }
+//
+//    @Test
+//    public void setNextOilChangeMiles(){
+//        Vehicle vehicle = new Vehicle();
+//        int expected = 23000;
+//        vehicle.setNextOilChangeMiles();
+//        int actual = vehicle.getVehicleMiles();
+//        assertEquals(expected, actual);
+//    }
+//
+//    @Test
+//    public void setNextTireRotationMiles(){
+//        Vehicle vehicle = new Vehicle();
+//        int expected = 25000;
+//        vehicle.setNextTireRotationMiles();
+//        int actual = vehicle.getVehicleMiles();
+//        assertEquals(expected, actual);
+//    }
 
 }

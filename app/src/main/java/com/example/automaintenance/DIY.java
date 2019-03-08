@@ -12,4 +12,21 @@ public class DIY extends AppCompatActivity {
         setContentView(R.layout.activity_diy);
         Intent intent = getIntent();
     }
+    // Vehicle Variable
+    private Vehicle vehicle;
+
+    // Non-default Constructor
+    public DIY(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    // Class methods
+    public String getVideoLink(Vehicle vehicle) {
+        String videoLink = "";
+
+        // Code to retrieve link for vehicle here.
+
+        return videoLink;
+    }
+
 }
