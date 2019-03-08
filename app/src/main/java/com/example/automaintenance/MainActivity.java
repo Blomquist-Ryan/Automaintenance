@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addToVehicleList(View view){
-        Intent intent = new Intent(this, AddVehicle.class);
+        Intent intent = new Intent(this, Vehicle.class);
         startActivity(intent);
 
         Gson gson = new Gson();
