@@ -50,10 +50,7 @@ public class AddVehicle extends AppCompatActivity {
         EditText vin = findViewById(R.id.newVin);
         String newVin = vin.toString();
 
-
-
-
-
+        // Build the vehicle object.
         newVehicle.setMake(newMake);
         newVehicle.setModel(newModel);
         newVehicle.setYear(newYear);
