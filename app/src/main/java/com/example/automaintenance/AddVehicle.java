@@ -17,14 +17,25 @@ public class AddVehicle extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
-
-
-
     }
+
     public void returnToHomePage(View view){
         Intent intent = new Intent(this, AddVehicle.class);
         startActivity(intent);
 
+    }
+
+    public Vehicle newVehicle() {
+        Vehicle newVehicle = new Vehicle();
+
+        newVehicle.setMake();
+        newVehicle.setModel();
+        newVehicle.setYear();
+        newVehicle.setVehicleMiles();
+        newVehicle.setLicensePlate();
+        newVehicle.setVin();
+
+        return newVehicle;
     }
 
 }
