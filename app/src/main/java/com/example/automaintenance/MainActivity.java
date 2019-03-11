@@ -29,13 +29,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addToVehicleList(View view){
-        Intent intent = new Intent(this, Vehicle.class);
+        Intent intent = new Intent(this, NewVehicle.class);
         startActivity(intent);
-
-        Gson gson = new Gson();
-        SharedPreferences mSettings = this.getSharedPreferences("name_preferences.xml", 0);
-        String sharedprefs = mSettings.getString("missing","newVehicle");
-        vehicleList = gson.fromJson(sharedprefs, new TypeToken<List<Vehicle>>(){}.getType());
     }
 
     public void toOptionsPage(View view) {

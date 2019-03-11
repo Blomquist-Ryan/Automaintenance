@@ -18,8 +18,10 @@ public class NewVehicle extends AppCompatActivity {
         setContentView(R.layout.activity_new_vehicle);
     }
 
-    public void returnToHomePage(View view){
-        Intent intent = new Intent(this, NewVehicle.class);
+    public void returnToHomePage(View view) {
+        newVehicle();
+
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

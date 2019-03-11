@@ -13,24 +13,20 @@ public class Options extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
         Intent intent = getIntent();
-
     }
 
     public void toService(View view){
         Intent intent = new Intent(this, Service.class);
         startActivity(intent);
-
     }
 
     public void toServiceHistory(View view){
         Intent intent = new Intent(this, ServiceHistory.class);
         startActivity(intent);
-
     }
 
     public void toDIY(View view){
         Intent intent = new Intent(this, DIY.class);
         startActivity(intent);
-
     }
 }
