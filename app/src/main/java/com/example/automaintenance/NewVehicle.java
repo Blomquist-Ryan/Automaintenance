@@ -28,10 +28,15 @@ public class NewVehicle extends AppCompatActivity {
         if (flag) {
             Gson gson = new Gson();
             vehicle = gson.toJson(vehicle);
+
+            System.out.println("!!!!!!!!!" + vehicle);
+
             SharedPreferences mSettings = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = mSettings.edit();
             editor.putString(vehicle, "newVehicle");
             editor.apply();
+
+            System.out.println("!!!!!!!!!" + vehicle);
 
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -67,19 +72,19 @@ public class NewVehicle extends AppCompatActivity {
         newVehicle.setLicensePlate(newLicense);
         newVehicle.setVin(newVin);
 
-        if(TextUtils.isEmpty(make.getText().toString()))
+        if (TextUtils.isEmpty(make.getText().toString()))
         {
             Toast.makeText(this, "Please fill in required fields.", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(model.getText().toString()))
+        else if (TextUtils.isEmpty(model.getText().toString()))
         {
             Toast.makeText(this, "Please fill in required fields.", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(year.getText().toString()))
+        else if (TextUtils.isEmpty(year.getText().toString()))
         {
             Toast.makeText(this, "Please fill in required fields.", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(miles.getText().toString()))
+        else if (TextUtils.isEmpty(miles.getText().toString()))
         {
             Toast.makeText(this, "Please fill in required fields.", Toast.LENGTH_SHORT).show();
         }

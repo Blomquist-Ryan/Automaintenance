@@ -21,15 +21,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
-
         load();
-            Log.i(TAG, "onCreate: Loaded vehicle from savedPrefences " + savedVehicle + ".");
-
-        //save();
-        //Log.i(TAG, "onCreate: Loaded vehicle from savedPrefences " + savedVehicle + ".");
+        Log.i(TAG, "onCreate: Loaded vehicle from savedPrefences " + savedVehicle + ".");
     }
 
     public void addToVehicleList(View view){
@@ -49,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString(savedVehicle, "savedVehicle");
         editor.apply();
-        Log.i(TAG, "onCreate: Loaded vehicle from savedPrefences " + savedVehicle + ".");
     }
 
     public void load() {

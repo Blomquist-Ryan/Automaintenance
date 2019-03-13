@@ -16,6 +16,8 @@ public class Vehicle {
         setModel("");
         setVehicleMiles("");
         setYear("");
+        setLicensePlate("");
+        setVin("");
     }
 
     public String getVehicleMiles() {
