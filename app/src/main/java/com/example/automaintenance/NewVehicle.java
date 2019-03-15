@@ -1,5 +1,6 @@
 package com.example.automaintenance;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+
 public class NewVehicle extends AppCompatActivity {
     public boolean flag;
     @Override
@@ -22,48 +24,46 @@ public class NewVehicle extends AppCompatActivity {
     }
 
     public void returnToHomePage(View view) {
-        newVehicle();
-        String vehicle = "";
+        Vehicle newVehicle = newVehicle();
 
         if (flag) {
             Gson gson = new Gson();
-            vehicle = gson.toJson(vehicle);
+            String vehicle = gson.toJson(newVehicle);
 
             System.out.println("!!!!!!!!!" + vehicle);
-
-            SharedPreferences mSettings = PreferenceManager.getDefaultSharedPreferences(this);
-            SharedPreferences.Editor editor = mSettings.edit();
+            //Context context = NewVehicle.this;
+            //SharedPreferences mSettings = getPreferences( 0);
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = prefs.edit();
             editor.putString(vehicle, "newVehicle");
-            editor.apply();
-
-            System.out.println("!!!!!!!!!" + vehicle);
+            editor.commit();
 
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
     }
 
-    public void newVehicle() {
+    public Vehicle newVehicle() {
         flag = false;
         Vehicle newVehicle = new Vehicle();
 
         EditText make = findViewById(R.id.newMake);
-        String newMake = make.toString();
+        String newMake = make.getText().toString();
 
         EditText model = findViewById(R.id.newModel);
-        String newModel = model.toString();
+        String newModel = model.getText().toString();
 
         EditText year = findViewById(R.id.newYear);
-        String newYear = year.toString();
+        String newYear = year.getText().toString();
 
         EditText miles = findViewById(R.id.newMiles);
-        String newMiles = miles.toString();
+        String newMiles = miles.getText().toString();
 
         EditText license = findViewById(R.id.newLicense);
-        String newLicense = license.toString();
+        String newLicense = license.getText().toString();
 
         EditText vin = findViewById(R.id.newVin);
-        String newVin = vin.toString();
+        String newVin = vin.getText().toString();
 
         newVehicle.setMake(newMake);
         newVehicle.setModel(newModel);
@@ -91,5 +91,6 @@ public class NewVehicle extends AppCompatActivity {
         else {
             flag = true;
         }
+        return newVehicle;
     }
 }
