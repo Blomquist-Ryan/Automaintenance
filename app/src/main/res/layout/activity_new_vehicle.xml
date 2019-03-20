@@ -10,11 +10,7 @@
         android:id="@+id/newMake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginTop="116dp"
         android:ems="10"
         android:hint="Make"
         android:inputType="textPersonName"
@@ -100,7 +96,7 @@
     <Button
         android:id="@+id/button8"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="153dp"
         android:layout_marginBottom="112dp"
         android:onClick="returnToHomePage"
@@ -108,6 +104,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newVin" />
+        app:layout_constraintTop_toBottomOf="@+id/newVin"
+        app:layout_constraintVertical_bias="0.604" />
 
 </android.support.constraint.ConstraintLayout>
