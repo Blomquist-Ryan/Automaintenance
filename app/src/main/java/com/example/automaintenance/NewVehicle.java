@@ -36,7 +36,7 @@ public class NewVehicle extends AppCompatActivity {
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = prefs.edit();
             editor.putString("newVehicle", vehicle);
-            editor.commit();
+            editor.apply();
 
             Log.d("After commit", "Saved successfully.");
 

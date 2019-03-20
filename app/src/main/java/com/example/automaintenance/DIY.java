@@ -23,7 +23,6 @@ public class DIY extends AppCompatActivity {
 
     // Class methods
     private String getVideoLink() {
-
         EditText searchbar = findViewById(R.id.search);
         String search = searchbar.getText().toString();
         return search;

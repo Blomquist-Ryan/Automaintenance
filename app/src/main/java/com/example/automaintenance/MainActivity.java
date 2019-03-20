@@ -54,15 +54,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void save() {
-        Gson gson = new Gson();
-        savedVehicle = gson.toJson(vehicleList);
-        SharedPreferences mSettings = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = mSettings.edit();
-        editor.putString(savedVehicle, "savedVehicle");
-        editor.apply();
-    }
-
     /**
      * Loads vehicles from the saved preferences and then
      * populates the list on the main activity with those
