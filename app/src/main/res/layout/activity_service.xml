@@ -30,8 +30,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+        android:hint="miles"
         android:inputType="textPersonName"
-        android:text="miles"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,26 +46,19 @@
         android:layout_marginTop="276dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="type of service"
+        android:text="submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/servicemiles" />
 
-    <EditText
-        android:id="@+id/ServiceDate"
-        android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:contentDescription="DateOfService"
-        android:ems="10"
-        android:inputType="date"
+    <Spinner
+        android:id="@+id/serviceChoices"
+        android:layout_width="213dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/servicemiles" />
 

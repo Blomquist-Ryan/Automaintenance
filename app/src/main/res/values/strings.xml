@@ -10,4 +10,13 @@
     <string name="newMiles">New Miles</string>
     <string name="newLicense">New License</string>
     <string name="newVin">New Vin</string>
+
+
+    <string-array name="Service_Options">
+        <item>Oil Change</item>
+        <item>Tire Rotation</item>
+        <item>Battery</item>
+        <item>headlights</item>
+        <item>spark plugs</item>
+    </string-array>
 </resources>
