@@ -31,8 +31,6 @@ public class NewVehicle extends AppCompatActivity {
             String vehicle = gson.toJson(newVehicle);
 
             System.out.println("!!!!!!!!!" + vehicle);
-            //Context context = NewVehicle.this;
-            //SharedPreferences mSettings = getPreferences( 0);
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = prefs.edit();
             editor.putString(vehicle, "newVehicle");

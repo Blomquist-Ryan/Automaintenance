@@ -53,9 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void load() {
         Gson gson = new Gson();
-        //Context context = MainActivity.this;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        //SharedPreferences mSettings = getPreferences( 0);
         String savedVehicleInfo = prefs.getString("newVehicle","Missing");
 
         if (savedVehicleInfo.equals("Missing")) {
