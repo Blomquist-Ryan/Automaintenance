@@ -15,16 +15,28 @@ public class Options extends AppCompatActivity {
         Intent intent = getIntent();
     }
 
+    /**
+     *  sends the user to the service paged
+     * @param view
+     */
     public void toService(View view){
         Intent intent = new Intent(this, Service.class);
         startActivity(intent);
     }
 
+    /**
+     * sends the user to the service history page
+     * @param view
+     */
     public void toServiceHistory(View view){
         Intent intent = new Intent(this, ServiceHistory.class);
         startActivity(intent);
     }
 
+    /**
+     * sends the user to the DIY page
+     * @param view
+     */
     public void toDIY(View view){
         Intent intent = new Intent(this, DIY.class);
         startActivity(intent);

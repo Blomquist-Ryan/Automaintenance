@@ -22,13 +22,17 @@ public class DIY extends AppCompatActivity {
     }
 
     // Class methods
-    public String getVideoLink() {
+    private String getVideoLink() {
 
         EditText searchbar = findViewById(R.id.search);
         String search = searchbar.getText().toString();
         return search;
     }
 
+    /**
+     * creates an intent to youtube to search for DIY Videos
+     * @param view
+     */
     public void toYoutube(View view){
         String search = getVideoLink();
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/results?search_query=" +  search)));

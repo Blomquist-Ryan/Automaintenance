@@ -11,6 +11,9 @@ public class Vehicle {
     private String licensePlate;
     private String vin;
 
+    /**
+     * creates sa vehicle with default values of blank values
+     */
     public Vehicle() {
         setMake("");
         setModel("");
@@ -19,6 +22,7 @@ public class Vehicle {
         setLicensePlate("");
         setVin("");
     }
+
 
     public String getVehicleMiles() {
         return vehicleMiles;
@@ -68,8 +72,16 @@ public class Vehicle {
         this.vin = vin;
     }
 
-    // This function builds a vehicle string that can be used to find
-    // DIY videos on YouTube.
+
+
+
+
+    /**
+     *  builds a vehicle string that can be used to find
+     * vDIY videos on YouTube.
+     * @param vehicle the desired vehicle to get the information of
+     * @return a string containing the direct information about the vehicle (ie year, make, model)
+     */
     public String getVehicleName(Vehicle vehicle) {
         String vehicleName;
 

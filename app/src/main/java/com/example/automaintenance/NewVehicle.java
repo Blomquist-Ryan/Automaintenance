@@ -21,6 +21,11 @@ public class NewVehicle extends AppCompatActivity {
         setContentView(R.layout.activity_new_vehicle);
     }
 
+    /**
+     * creates a new vehicle and stores it to shared preferences
+     * and returns the home page
+     * @param view
+     */
     public void returnToHomePage(View view) {
         Vehicle newVehicle = newVehicle();
 
@@ -39,6 +44,11 @@ public class NewVehicle extends AppCompatActivity {
         }
     }
 
+    /***
+     * fills in values for a new vehicle to be added to the list of vehicles
+     *
+     * @return
+     */
     public Vehicle newVehicle() {
         flag = false;
         Vehicle newVehicle = new Vehicle();
