@@ -21,7 +21,6 @@ public class Service extends AppCompatActivity {
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Service_Options));
-        //adapter.setDropDownViewRescource(android.R.layout.simple_spinner_dropdown_item);
         Choices.setAdapter(adapter);
     }
 
@@ -42,7 +41,6 @@ public class Service extends AppCompatActivity {
 
     public int calculateNextService(int currentMiles) {
         return 0;
-
     }
 
 

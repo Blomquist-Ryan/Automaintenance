@@ -17,16 +17,9 @@ public class DIY extends AppCompatActivity {
         setContentView(R.layout.activity_diy);
         Intent intent = getIntent();
         // this will be where we get the info for the vehicle from
-        //from shared preferences.
-      //  Gson gson = new Gson();
+        // from shared preferences.
+        // Gson gson = new Gson();
     }
-    // Vehicle Variable
-    //private Vehicle vehicle;
-
-    // Non-default Constructor
-//    public DIY(Vehicle vehicle) {
-//        this.vehicle = vehicle;
-//    }
 
     // Class methods
     public String getVideoLink() {
@@ -34,7 +27,6 @@ public class DIY extends AppCompatActivity {
         EditText searchbar = findViewById(R.id.search);
         String search = searchbar.getText().toString();
         return search;
-
     }
 
     public void toYoutube(View view){

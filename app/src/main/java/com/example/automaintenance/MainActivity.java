@@ -14,6 +14,15 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Main Class.
+ *
+ * This class is the entry point for the app and
+ * is in charge of a lot of things such as saving
+ * and loading preferences, adding vehicles to
+ * the app, and providing a landing for when the
+ * user launches the app.
+ */
 public class MainActivity extends AppCompatActivity {
 //    Context context = MainActivity.this; // or getActivity(); in case of Fragments
 //    SharedPreferences sharedPref = context.getSharedPreferences(
@@ -32,11 +41,23 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onCreate: Loaded vehicle from savedPreferences " + savedVehicle + ".");
     }
 
+    /**
+     * Sends the user to a new intent so that they
+     * can add their own vehicles to the app.
+     *
+     * The user can add an unlimited amount of vehicles.
+     * @param view
+     */
     public void addToVehicleList(View view) {
         Intent intent = new Intent(this, NewVehicle.class);
         startActivity(intent);
     }
 
+    /**
+     * Sends the user to the options page. There they can
+     * look at the Option for each vehicle.
+     * @param view
+     */
     public void toOptionsPage(View view) {
         Intent intent = new Intent(this, Options.class);
         startActivity(intent);
@@ -51,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * Loads vehicles from the saved preferences and then
+     * populates the list on the main activity with those
+     * vehicles.
+     */
     public void load() {
         Gson gson = new Gson();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

@@ -1,6 +1,5 @@
 package com.example.automaintenance;
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -13,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-
 
 public class NewVehicle extends AppCompatActivity {
     public boolean flag;
