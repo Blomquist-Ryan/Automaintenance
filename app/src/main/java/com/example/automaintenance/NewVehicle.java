@@ -33,11 +33,12 @@ public class NewVehicle extends AppCompatActivity {
             Gson gson = new Gson();
             String vehicle = gson.toJson(newVehicle);
 
-            System.out.println("!!!!!!!!!" + vehicle);
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = prefs.edit();
-            editor.putString(vehicle, "newVehicle");
+            editor.putString("newVehicle", vehicle);
             editor.commit();
+
+            Log.d("After commit", "Saved successfully.");
 
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -45,7 +46,7 @@ public class NewVehicle extends AppCompatActivity {
     }
 
     /***
-     * fills in values for a new vehicle to be added to the list of vehicles
+     * Fills in values for a new vehicle to be added to the list of vehicles
      *
      * @return
      */
