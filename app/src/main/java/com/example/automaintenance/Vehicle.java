@@ -1,7 +1,5 @@
 package com.example.automaintenance;
 
-import java.util.List;
-
 public class Vehicle {
     // Vehicle Variables:
     private String vehicleMiles;
@@ -12,7 +10,7 @@ public class Vehicle {
     private String vin;
 
     /**
-     * creates sa vehicle with default values of blank values
+     * Creates sa vehicle with default values of blank values
      */
     public Vehicle() {
         setMake("");
@@ -22,7 +20,6 @@ public class Vehicle {
         setLicensePlate("");
         setVin("");
     }
-
 
     public String getVehicleMiles() {
         return vehicleMiles;
@@ -72,31 +69,16 @@ public class Vehicle {
         this.vin = vin;
     }
 
-
-
-
-
     /**
-     *  builds a vehicle string that can be used to find
-     * vDIY videos on YouTube.
-     * @param vehicle the desired vehicle to get the information of
+     *  Builds a vehicle string that can be used to find
+     *  DIY videos on YouTube.
      * @return a string containing the direct information about the vehicle (ie year, make, model)
      */
-    public String getVehicleName(Vehicle vehicle) {
-        String vehicleName;
-
-        String vehicleYear = vehicle.getYear();
-        String vehicleMake = vehicle.getMake();
-        String vehicleModel = vehicle.getModel();
-        vehicleName = vehicleYear + " " + vehicleMake + " " + vehicleModel;
-        System.out.println("The vehicle is " + vehicleName + ".");
-        // Correct format i.e. "2019 Ford 150"
-
+    public String getVehicleName() {
+        String vehicleYear = getYear();
+        String vehicleMake = getMake();
+        String vehicleModel = getModel();
+        String vehicleName = vehicleYear + " " + vehicleMake + " " + vehicleModel;
         return vehicleName;
     }
-
-    public void getVehicleNameinList(List<Vehicle> vehicleList) {
-
-    }
-
 }

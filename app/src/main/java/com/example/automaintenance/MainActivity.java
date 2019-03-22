@@ -7,12 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-
+import android.widget.Button;
+import android.widget.TextView;
 import com.google.gson.Gson;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Main Class.
@@ -24,35 +21,52 @@ import java.util.List;
  * user launches the app.
  */
 public class MainActivity extends AppCompatActivity {
-    List<Vehicle> vehicleList = new ArrayList<>();
-    List<String> vehicles = new ArrayList<>();
-    public String savedVehicle;
-    private Spinner Choices;
+    public boolean flag;
+    public Vehicle userVehicle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs.edit().clear().commit(); //!!!Please leave this in for now.!!!
+        flag = false;
+        String nameOfVehicle = "";
+        userVehicle = load();
+        Button AddVehicle = findViewById(R.id.button);
 
-        load();
-        for (Vehicle car:vehicleList             ) {
-            vehicles.add(car.getVehicleName(car));
-
-
+        if (flag) {
+            AddVehicle.setVisibility(View.VISIBLE); //SHOW the button
+        }
+        else {
+            nameOfVehicle = userVehicle.getVehicleName();
         }
 
-        Choices = (Spinner) findViewById(R.id.serviceChoices);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, vehicles);
-        Choices.setAdapter(adapter);
+        final TextView vehicleTextView = findViewById(R.id.textView6);
+        vehicleTextView.setText(displayVehicle(nameOfVehicle));
+    }
+
+    /**
+     * A function that determines what to display
+     * in the vehicle text view box.
+     * @param vehicle
+     * @return
+     */
+    public String displayVehicle(String vehicle) {
+        if (vehicle.equals("")) {
+            return "Please add a Vehicle.";
+        }
+        else {
+            return userVehicle.getVehicleName();
+        }
     }
 
     /**
      * Sends the user to a new intent so that they
      * can add their own vehicles to the app.
-     *
+     * <p>
      * The user can add an unlimited amount of vehicles.
+     *
      * @param view
      */
     public void addToVehicleList(View view) {
@@ -61,8 +75,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Starts the settings activity.
+     * @param view
+     */
+    public void toSettings(View view) {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
+    /**
      * Sends the user to the options page. There they can
      * look at the Option for each vehicle.
+     *
      * @param view
      */
     public void toOptionsPage(View view) {
@@ -75,18 +99,20 @@ public class MainActivity extends AppCompatActivity {
      * populates the list on the main activity with those
      * vehicles.
      */
-    public void load() {
+    public Vehicle load() {
         Gson gson = new Gson();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String savedVehicleInfo = prefs.getString("newVehicle","Missing");
+        String savedVehicleInfo = prefs.getString("newVehicle", "Missing");
 
         if (savedVehicleInfo.equals("Missing")) {
             Log.i("Inside Load", "Couldn't load savedVehicleInfo.");
+            flag = true;
+            return null;
         }
         else {
             Vehicle loadedVehicle = gson.fromJson(savedVehicleInfo, Vehicle.class);
-            vehicleList.add(loadedVehicle);
             Log.i("Inside Else:", "Added saved vehicle.");
+            return loadedVehicle;
         }
     }
 }
