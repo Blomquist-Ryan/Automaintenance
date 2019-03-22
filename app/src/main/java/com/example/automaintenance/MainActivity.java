@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,9 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
     List<Vehicle> vehicleList = new ArrayList<>();
+    List<String> vehicles = new ArrayList<>();
     public String savedVehicle;
+    private Spinner Choices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         load();
+        for (Vehicle car:vehicleList             ) {
+            vehicles.add(car.getVehicleName(car));
+
+
+        }
+
+        Choices = (Spinner) findViewById(R.id.serviceChoices);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, vehicles);
+        Choices.setAdapter(adapter);
     }
 
     /**
