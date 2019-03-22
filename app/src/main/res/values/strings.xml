@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Automaintenance</string>
+    <string name="app_name">Auto Maintenance</string>
     <string name="title_activity_add_vehicle">AddVehicle</string>
-    <string name="title_activity_optoins">Optoins</string>
+    <string name="title_activity_options">Options</string>
 
 
     <string name="newMake">New Make</string>
@@ -16,7 +16,7 @@
         <item>Oil Change</item>
         <item>Tire Rotation</item>
         <item>Battery</item>
-        <item>headlights</item>
-        <item>spark plugs</item>
+        <item>Headlights</item>
+        <item>Spark plugs</item>
     </string-array>
 </resources>
