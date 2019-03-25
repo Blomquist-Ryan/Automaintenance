@@ -38,8 +38,6 @@ public class NewVehicle extends AppCompatActivity {
             editor.putString("newVehicle", vehicle);
             editor.apply();
 
-            Log.d("After commit", "Saved successfully.");
-
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }

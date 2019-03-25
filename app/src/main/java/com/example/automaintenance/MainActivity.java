@@ -28,18 +28,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        prefs.edit().clear().commit(); //!!!Please leave this in for now.!!!
+
         flag = false;
         String nameOfVehicle = "";
-        userVehicle = load();
-        Button AddVehicle = findViewById(R.id.button);
+        userVehicle = load(); // Attempt to load a vehicle.
 
-        if (flag) {
+        Button AddVehicle = findViewById(R.id.button); //Create a button for addVehicle
+        Button optionsButton = findViewById(R.id.options); //Create a button for Options
+
+        if (flag) { // if (no vehicle found in savedPreferences)
             AddVehicle.setVisibility(View.VISIBLE); //SHOW the button
+            optionsButton.setEnabled(false);
         }
         else {
             nameOfVehicle = userVehicle.getVehicleName();
+            optionsButton.setEnabled(true);
         }
 
         final TextView vehicleTextView = findViewById(R.id.textView6);

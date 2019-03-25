@@ -10,7 +10,7 @@ public class Vehicle {
     private String vin;
 
     /**
-     * Creates sa vehicle with default values of blank values
+     * Creates a vehicle with default values of blank values
      */
     public Vehicle() {
         setMake("");
