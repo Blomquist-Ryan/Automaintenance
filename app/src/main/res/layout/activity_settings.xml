@@ -9,12 +9,12 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="225dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="28dp"
         android:text="Settings"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -22,8 +22,8 @@ public class NewVehicle extends AppCompatActivity {
     }
 
     /**
-     * creates a new vehicle and stores it to shared preferences
-     * and returns the home page
+     * Creates a new vehicle and stores it to shared preferences
+     * and returns the home page.
      * @param view
      */
     public void returnToHomePage(View view) {
@@ -44,7 +44,7 @@ public class NewVehicle extends AppCompatActivity {
     }
 
     /***
-     * Fills in values for a new vehicle to be added to the list of vehicles
+     * Fills in values for a new vehicle to be added to the list of vehicles.
      *
      * @return
      */

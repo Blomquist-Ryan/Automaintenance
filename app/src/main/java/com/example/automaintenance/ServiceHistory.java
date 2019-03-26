@@ -14,7 +14,7 @@ public class ServiceHistory extends AppCompatActivity {
         setContentView(R.layout.activity_service_history);
         Intent intent = getIntent();
 
-        Choices = (Spinner) findViewById(R.id.serviceType);
+        Choices = findViewById(R.id.serviceType);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Service_Options));
         Choices.setAdapter(adapter);

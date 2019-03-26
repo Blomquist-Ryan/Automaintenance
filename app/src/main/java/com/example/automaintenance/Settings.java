@@ -23,7 +23,7 @@ public class Settings extends AppCompatActivity {
      */
     public void clearVehicle(View view) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        prefs.edit().clear().commit();
+        prefs.edit().clear().apply();
 
         Toast.makeText(this, "The user's saved vehicle has been cleared.",
                 Toast.LENGTH_SHORT).show();

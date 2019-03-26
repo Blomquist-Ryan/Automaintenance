@@ -43,6 +43,4 @@ public class Service extends AppCompatActivity {
         return 0;
     }
 
-
-
 }

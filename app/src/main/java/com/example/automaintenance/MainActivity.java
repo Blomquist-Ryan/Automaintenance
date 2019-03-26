@@ -87,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * This function sends the user to the about page.
+     */
+    public void toAbout(View view) {
+        Intent intent = new Intent(this, About.class);
+        startActivity(intent);
+    }
+
+    /**
      * Sends the user to the options page. There they can
      * look at the Option for each vehicle.
      *
