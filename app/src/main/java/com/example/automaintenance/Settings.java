@@ -2,6 +2,7 @@ package com.example.automaintenance;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,5 +31,9 @@ public class Settings extends AppCompatActivity {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    public void rickRoll(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://www.youtube.com/watch?v=dQw4w9WgXcQ")));
     }
 }
