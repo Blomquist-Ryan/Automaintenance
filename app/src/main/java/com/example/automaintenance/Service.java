@@ -17,7 +17,7 @@ public class Service extends AppCompatActivity {
         setContentView(R.layout.activity_service);
         Intent intent = getIntent();
 
-        Choices = (Spinner) findViewById(R.id.serviceChoices);
+        Choices = findViewById(R.id.serviceChoices);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Service_Options));
@@ -42,5 +42,4 @@ public class Service extends AppCompatActivity {
     public int calculateNextService(int currentMiles) {
         return 0;
     }
-
 }

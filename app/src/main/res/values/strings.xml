@@ -17,7 +17,9 @@
         <item>Tire Rotation</item>
         <item>Battery</item>
         <item>Headlights</item>
-        <item>Spark plugs</item>
+        <item>Spark Plugs</item>
+        <item>Air Filter</item>
+        <item>O2 Sensors</item>
     </string-array>
 
     <string name="title_activity_settings">Settings</string>

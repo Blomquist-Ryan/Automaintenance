@@ -40,4 +40,9 @@ public class Options extends AppCompatActivity {
         Intent intent = new Intent(this, DIY.class);
         startActivity(intent);
     }
+
+    public void toParts(View view) {
+        Intent intent = new Intent(this, Parts.class);
+        startActivity(intent);
+    }
 }
