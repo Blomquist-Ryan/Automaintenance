@@ -30,7 +30,7 @@ import java.util.List;
 
 public class Service extends AppCompatActivity {
     private Spinner Choices;
-    //String type = "";
+    String type = "";
 
     public String getMiles() {
         return miles;
@@ -77,36 +77,33 @@ public class Service extends AppCompatActivity {
    public void saveData(View view){
 
 
-        Service service = new Service();
+        Service oil = new OilChange();
+        EditText make = findViewById(R.id.servicemiles);
+        String newMiles = make.getText().toString();
+        oil.miles = newMiles;
+        Log.i("Inside saveData", "saveData: " + oil.getMiles());
 
 
-       EditText make = findViewById(R.id.servicemiles);
-       String newMiles = make.getText().toString();
-       service.miles = newMiles;
-       Log.i("Inside saveData", "saveData: " + service.getMiles());
 
-       Gson gson = new Gson();
-       String history = gson.toJson(service);
+        Spinner spinner = findViewById(R.id.serviceChoices);
+        String serviceOption = spinner.getSelectedItem().toString();
+        oil.type = serviceOption;
 
-       SharedPreferences histpref = PreferenceManager.getDefaultSharedPreferences(this);
-       SharedPreferences.Editor editor = histpref.edit();
-       editor.putString("savedHistory", history);
-       editor.apply();
+        Log.i("getting values", "saveData: service Option: " + oil.type);
 
-//       // List<Service> service = new ArrayList<>();
-//        Service service = new Service();
-////        Spinner spinner = findViewById(R.id.serviceChoices);
-////        String serviceOption = spinner.getSelectedItem().toString();
+        Gson gson = new Gson();
+        String history = gson.toJson(oil);
+      // Log.i("chek toJson", "saveData: " + history);
+
+//       SharedPreferences histpref = PreferenceManager.getDefaultSharedPreferences(this);
+//       SharedPreferences.Editor editor = histpref.edit();
+//       editor.putString("savedHistory", history);
+//       editor.apply();
+
+
+
 ////        service.type = serviceOption;
 //       // service = load();
-//
-//
-//
-////        ;
-////
-////
-////
-//
     }
 
 
