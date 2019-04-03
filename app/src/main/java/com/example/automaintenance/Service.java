@@ -1,6 +1,8 @@
 package com.example.automaintenance;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,9 +19,6 @@ import com.google.gson.Gson;
 public class Service extends AppCompatActivity {
     //Private member variables
     private Spinner Choices;
-    String type = "";
-    String miles = "";
-    String date = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,20 +39,47 @@ public class Service extends AppCompatActivity {
      * @param view
      */
     public void saveData(View view){
+        ServiceObject service = new ServiceObject();
 
-        Service service = new Service();
         EditText make = findViewById(R.id.servicemiles);
-        String newMiles = make.getText().toString();
-        Log.i("Inside saveData", "saveData: " + service.getMiles());
+        service.setMiles(make.getText().toString());
 
         Spinner spinner = findViewById(R.id.serviceChoices);
-        String serviceOption = spinner.getSelectedItem().toString();
+        service.setType(spinner.getSelectedItem().toString());
 
-        Log.i("getting values", "saveData: service Option: " + service.type);
+        String prefLocation = "";
+
+        if (service.getType().equals("Oil Change")) {
+            prefLocation = "Oil Change";
+        }
+        else if (service.getType().equals("Tire Rotation")) {
+            prefLocation = "Tire Rotation";
+        }
+        else if (service.getType().equals("Battery")) {
+            prefLocation = "Battery";
+        }
+        else if (service.getType().equals("Headlights")) {
+            prefLocation = "Headlights";
+        }
+        else if (service.getType().equals("Spark Plugs")) {
+            prefLocation = "Spark Plugs";
+        }
+        else if (service.getType().equals("Air Filter")) {
+            prefLocation = "Air Filter";
+        }
+        else if (service.getType().equals("O2 Sensors")) {
+            prefLocation = "O2 Sensors";
+        }
 
         Gson gson = new Gson();
         String history = gson.toJson(service);
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(prefLocation, history);
+        editor.apply();
+
+        Intent intent = new Intent(this, Options.class);
+        startActivity(intent);
     }
-
-
 }
