@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -116,13 +115,11 @@ public class MainActivity extends AppCompatActivity {
         String savedVehicleInfo = prefs.getString("newVehicle", "Missing");
 
         if (savedVehicleInfo.equals("Missing")) {
-            Log.i("Inside Load", "Couldn't load savedVehicleInfo.");
             flag = true;
             return null;
         }
         else {
             Vehicle loadedVehicle = gson.fromJson(savedVehicleInfo, Vehicle.class);
-            Log.i("Inside Else:", "Added saved vehicle.");
             return loadedVehicle;
         }
     }

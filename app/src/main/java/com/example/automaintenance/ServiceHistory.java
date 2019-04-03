@@ -6,30 +6,25 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ServiceHistory extends AppCompatActivity {
     private Spinner Choices;
 
+    /**
+     * This function is in charge of showing the user
+     * the last known date of service for each serviceable
+     * item in the user's vehicle.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_history);
         Intent intent = getIntent();
-
-        Choices = findViewById(R.id.serviceType);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Service_Options));
-        Choices.setAdapter(adapter);
 
         TextView oilChange = findViewById(R.id.History);
         TextView rotation = findViewById(R.id.tires);
@@ -46,10 +41,13 @@ public class ServiceHistory extends AppCompatActivity {
         sparks.setText(load("Spark Plugs"));
         air.setText(load("Air Filter"));
         O2.setText(load("O2 Sensors"));
-
     }
 
-
+    /**
+     * This function loads the saved service records.
+     * @param type
+     * @return
+     */
     public String load(String type){
         Gson gson = new Gson();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -66,6 +64,5 @@ public class ServiceHistory extends AppCompatActivity {
             Log.i("Inside Else:", "Added saved vehicle.");
             return history;
         }
-
-}
+    }
 }

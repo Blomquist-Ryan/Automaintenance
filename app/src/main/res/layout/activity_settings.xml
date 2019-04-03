@@ -28,7 +28,7 @@
         android:layout_marginEnd="160dp"
         android:layout_marginRight="160dp"
         android:onClick="clearVehicle"
-        android:text="Clear User Vehicle"
+        android:text="Clear User Vehicle and Service History"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
