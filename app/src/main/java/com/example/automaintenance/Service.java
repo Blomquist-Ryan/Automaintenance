@@ -54,56 +54,25 @@ public class Service extends AppCompatActivity {
         Choices.setAdapter(adapter);
 
     }
-//
-//    private int dateOfNextService;
-//
-//    // Class Methods
-//    public int getDateOfNextService() {
-//        return dateOfNextService;
-//    }
-//
-//    public void setDateOfNextService(int dateOfNextService) {
-//        this.dateOfNextService = dateOfNextService;
-//    }
-//
-//    public Service() {
-//        dateOfNextService = 0;
-//    }
-//
-    public int calculateNextService(int currentMiles) {
-        return 0;
+
+    public void calculateNextService() {
     }
 //
    public void saveData(View view){
 
-
-        Service oil = new OilChange();
         EditText make = findViewById(R.id.servicemiles);
         String newMiles = make.getText().toString();
-        oil.miles = newMiles;
         Log.i("Inside saveData", "saveData: " + oil.getMiles());
 
 
 
         Spinner spinner = findViewById(R.id.serviceChoices);
         String serviceOption = spinner.getSelectedItem().toString();
-        oil.type = serviceOption;
 
         Log.i("getting values", "saveData: service Option: " + oil.type);
 
         Gson gson = new Gson();
         String history = gson.toJson(oil);
-      // Log.i("chek toJson", "saveData: " + history);
-
-//       SharedPreferences histpref = PreferenceManager.getDefaultSharedPreferences(this);
-//       SharedPreferences.Editor editor = histpref.edit();
-//       editor.putString("savedHistory", history);
-//       editor.apply();
-
-
-
-////        service.type = serviceOption;
-//       // service = load();
     }
 
 
