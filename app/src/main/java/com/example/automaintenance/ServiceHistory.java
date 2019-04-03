@@ -31,29 +31,38 @@ public class ServiceHistory extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Service_Options));
         Choices.setAdapter(adapter);
 
-        TextView history = findViewById(R.id.History);
-//        //List<Service> services = new ArrayList<>();
-        Service service = load();
-          //service = load();
-        history.setText(service.toString());
+        TextView oilChange = findViewById(R.id.History);
+        TextView rotation = findViewById(R.id.tires);
+        TextView battery = findViewById(R.id.battery);
+        TextView headlights = findViewById(R.id.headlights);
+        TextView sparks = findViewById(R.id.sparks);
+        TextView air = findViewById(R.id.air);
+        TextView O2 = findViewById(R.id.O2);
 
+        oilChange.setText(load("Oil Change"));
+        rotation.setText(load("Tire Rotation"));
+        battery.setText(load("Battery"));
+        headlights.setText(load("Headlights"));
+        sparks.setText(load("Spark Plugs"));
+        air.setText(load("Air Filter"));
+        O2.setText(load("O2 Sensors"));
 
     }
 
 
-
-    public Service load(){Gson gson = new Gson();
+    public String load(String type){
+        Gson gson = new Gson();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String savedhistoryInfo = prefs.getString("serviceHistory", "Missing");
+        String savedhistoryInfo = prefs.getString(type, "Missing");
 
         if (savedhistoryInfo.equals("Missing")) {
             Log.i("Inside Load", "Couldn't load savedVehicleInfo.");
             return null;
         }
         else {
-//            List<Service> history = gson.fromJson(savedhistoryInfo, new TypeToken<List<Service>>() {
-////            }.getType());
-            Service history = new Service();
+
+            ServiceObject loadedService = gson.fromJson(savedhistoryInfo, ServiceObject.class);
+            String history = loadedService.toString();
             Log.i("Inside Else:", "Added saved vehicle.");
             return history;
         }
