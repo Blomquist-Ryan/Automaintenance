@@ -9,22 +9,17 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import com.google.gson.Gson;
+
 /**
         create new objects of each service type and save them to shared preferences
         try and get shared preferences to display in service History
  */
 public class Service extends AppCompatActivity {
+    //Private member variables
     private Spinner Choices;
     String type = "";
-
-    public String getMiles() {
-        return miles;
-    }
-
     String miles = "";
-    //String date = "";
-
-
+    String date = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +35,11 @@ public class Service extends AppCompatActivity {
 
     }
 
-   public void saveData(View view){
+    /**
+     * SaveData saves the service item to shardPreferences.
+     * @param view
+     */
+    public void saveData(View view){
 
         EditText make = findViewById(R.id.servicemiles);
         String newMiles = make.getText().toString();
