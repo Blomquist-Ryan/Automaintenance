@@ -42,17 +42,18 @@ public class Service extends AppCompatActivity {
 
    public void saveData(View view){
 
+        Service service = new Service();
         EditText make = findViewById(R.id.servicemiles);
         String newMiles = make.getText().toString();
-        Log.i("Inside saveData", "saveData: " + oil.getMiles());
+        Log.i("Inside saveData", "saveData: " + service.getMiles());
 
         Spinner spinner = findViewById(R.id.serviceChoices);
         String serviceOption = spinner.getSelectedItem().toString();
 
-        Log.i("getting values", "saveData: service Option: " + oil.type);
+        Log.i("getting values", "saveData: service Option: " + service.type);
 
         Gson gson = new Gson();
-        String history = gson.toJson(oil);
+        String history = gson.toJson(service);
     }
 
 
