@@ -80,5 +80,6 @@ public class Vehicle {
         String vehicleModel = getModel();
         String vehicleName = vehicleYear + " " + vehicleMake + " " + vehicleModel;
         return vehicleName;
+
     }
 }
