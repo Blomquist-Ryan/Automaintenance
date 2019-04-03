@@ -1,9 +1,13 @@
 package com.example.automaintenance;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class ServiceObject {
-    String type = "";
-    String miles = "";
-    String date = "";
+    private String type = "";
+    private String miles = "";
+    private String date = "";
 
     public String getType() {
         return type;
@@ -25,10 +29,14 @@ public class ServiceObject {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate() {
+        this.date= new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+
     }
 
+    public String getString(){
+        return  type + " - Date: " + date +  " - Miles: " + miles;
+    }
 
 
 }

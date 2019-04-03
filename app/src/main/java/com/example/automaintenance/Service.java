@@ -46,8 +46,10 @@ public class Service extends AppCompatActivity {
 
         Spinner spinner = findViewById(R.id.serviceChoices);
         service.setType(spinner.getSelectedItem().toString());
+        service.setDate();
 
         String prefLocation = "";
+
 
         if (service.getType().equals("Oil Change")) {
             prefLocation = "Oil Change";

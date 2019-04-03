@@ -62,7 +62,7 @@ public class ServiceHistory extends AppCompatActivity {
         else {
 
             ServiceObject loadedService = gson.fromJson(savedhistoryInfo, ServiceObject.class);
-            String history = loadedService.toString();
+            String history = loadedService.getString();
             Log.i("Inside Else:", "Added saved vehicle.");
             return history;
         }
